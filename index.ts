@@ -1,9 +1,14 @@
 interface Operation {
     value: number;
+    toString(): string;
 }
 
 class Value implements Operation {
     constructor(public readonly value: number) { }
+
+    toString() {
+        return this.value.toString();
+    }
 }
 
 class Sum implements Operation {
@@ -14,7 +19,11 @@ class Sum implements Operation {
 
     get value() {
         return this.leftOperation.value + this.rightOperation.value;
-    }    
+    }
+
+    toString() {
+        return `(${this.leftOperation.toString()} + ${this.rightOperation.toString()}})`;
+    }
 }
 
 class Subtraction implements Operation {
@@ -25,6 +34,10 @@ class Subtraction implements Operation {
 
     get value() {
         return this.leftOperation.value - this.rightOperation.value;
+    }
+
+    toString() {
+        return `(${this.leftOperation.toString()} - ${this.rightOperation.toString()}})`;
     }
 }
 
@@ -37,6 +50,10 @@ class Multiplication implements Operation {
     get value() {
         return this.leftOperation.value * this.rightOperation.value;
     }
+
+    toString() {
+        return `(${this.leftOperation.toString()} * ${this.rightOperation.toString()}})`;
+    }
 }
 
 class Divide implements Operation {
@@ -47,6 +64,10 @@ class Divide implements Operation {
 
     get value() {
         return this.leftOperation.value / this.rightOperation.value;
+    }
+
+    toString() {
+        return `(${this.leftOperation.toString()} / ${this.rightOperation.toString()}})`;
     }
 }
 
@@ -199,5 +220,7 @@ const example5 = new Subtraction(
 );
 
 
-console.log([example1, example2, example3, example4, example5]);
-console.log([example1.value, example2.value, example3.value, example4.value, example5.value]);
+const printExample = (example: Operation) => console.log(`${example.toString()} = ${example.value}`);
+
+[example1, example2, example3, example4, example5]
+    .forEach(printExample);
