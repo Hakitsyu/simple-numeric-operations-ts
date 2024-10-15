@@ -22,7 +22,7 @@ class Sum implements Operation {
     }
 
     toString() {
-        return `(${this.leftOperation.toString()} + ${this.rightOperation.toString()}})`;
+        return `(${this.leftOperation.toString()} + ${this.rightOperation.toString()})`;
     }
 }
 
@@ -37,7 +37,7 @@ class Subtraction implements Operation {
     }
 
     toString() {
-        return `(${this.leftOperation.toString()} - ${this.rightOperation.toString()}})`;
+        return `(${this.leftOperation.toString()} - ${this.rightOperation.toString()})`;
     }
 }
 
@@ -52,7 +52,7 @@ class Multiplication implements Operation {
     }
 
     toString() {
-        return `(${this.leftOperation.toString()} * ${this.rightOperation.toString()}})`;
+        return `(${this.leftOperation.toString()} * ${this.rightOperation.toString()})`;
     }
 }
 
@@ -67,7 +67,7 @@ class Divide implements Operation {
     }
 
     toString() {
-        return `(${this.leftOperation.toString()} / ${this.rightOperation.toString()}})`;
+        return `(${this.leftOperation.toString()} / ${this.rightOperation.toString()})`;
     }
 }
 
